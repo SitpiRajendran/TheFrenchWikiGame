@@ -1,0 +1,15 @@
+{
+  "name": "thefrenchwikigame",
+  "version": "1.0.0",
+  "description": "Le jeu du Wikipédia enfin en français",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Sitpi RAJENDRAN",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
