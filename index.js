@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use('/img', express.static(__dirname + 'public/img'))
 
 // ROUTER SETUP
-app.use('/', indexRouter)
+app.use('/', indexRouter) 
 
 app.get('*', function(req, res, next){
     res.status(404);

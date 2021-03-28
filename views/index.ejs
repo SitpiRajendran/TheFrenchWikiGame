@@ -28,30 +28,28 @@
                 <br>
                 <button class="button is-white" id="bouton-mobile" href="/" onclick="myFunction()">Je veux une autre
                     combinaison 👉</button>
-                    <script>
-                        function myFunction() {
-                            document.getElementById("bouton-mobile").classList.add("is-loading");
-                            window.location.href = "/";
-                        }
-                    </script>
+                <script>
+                    function myFunction() {
+                        document.getElementById("bouton-mobile").classList.add("is-loading");
+                        window.location.href = "/";
+                    }
+                </script>
             </div>
             <div class="column">
                 <p class="subtitle is-6">Début :</p>
-                <a href="<%=start.url%>" target="_blank" rel="noopener noreferrer">
+                <a href="" target="_blank" rel="noopener noreferrer" id="start-url">
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="<%=start.thumbnail%>" alt="Placeholder image">
+                                <img src="" alt="Placeholder image" id="start-img">
                             </figure>
                         </div>
                         <div class="card-content has-background-danger">
                             <div class="media">
                                 <div class="media-content">
-                                    <p class="title is-4">
-                                        <%=start.title%>
+                                    <p class="title is-4" id="start-title">
                                     </p>
-                                    <p class="subtitle is-6">
-                                        <%=start.description%>
+                                    <p class="subtitle is-6" id="start-subtitle">
                                     </p>
                                 </div>
                             </div>
@@ -68,30 +66,28 @@
                 <br>
                 <button class="button is-white" id="bouton" href="/" onclick="myNewFunction()">Je veux une autre
                     combinaison 👉</button>
-                    <script>
-                        function myNewFunction() {
-                            document.getElementById("bouton").classList.add("is-loading");
-                            window.location.href = "/";
-                        }
-                    </script>
+                <script>
+                    function myNewFunction() {
+                        document.getElementById("bouton").classList.add("is-loading");
+                        window.location.href = "/";
+                    }
+                </script>
             </div>
             <div class="column">
                 <p class="subtitle is-6">Fin :</p>
-                <a href="<%=end.url%>" target="_blank" rel="noopener noreferrer">
+                <a href="" target="_blank" rel="noopener noreferrer" id="end-url">
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="<%=end.thumbnail%>" alt="Placeholder image">
+                                <img alt="Placeholder image" id="end-img">
                             </figure>
                         </div>
                         <div class="card-content has-background-danger">
                             <div class="media is-link">
                                 <div class="media-content is-link">
-                                    <p class="title is-4">
-                                        <%=end.title%>
+                                    <p class="title is-4" id="end-title">
                                     </p>
-                                    <p class="subtitle is-6">
-                                        <%=end.description%>
+                                    <p class="subtitle is-6" id="end-subtitle">
                                     </p>
                                 </div>
                             </div>
@@ -101,6 +97,38 @@
             </div>
         </div>
     </section>
+    <script>
+        fetch("https://fr.wikipedia.org/api/rest_v1/page/random/summary").then(async function (response) {
+            if (response.status == 200)
+                return response.json()
+            else {
+                console.log("ERROR")
+                window.location.href = "/pub";
+                return;
+            }
+        }).then((start) => {
+            console.log(start);
+            document.getElementById("start-url").setAttribute('href', start.content_urls.desktop.page);
+            document.getElementById("start-img").setAttribute('src', start.thumbnail.source);
+            document.getElementById("start-title").innerHTML = start.title;
+            document.getElementById("start-subtitle").innerHTML = start.description;
+        });
+        fetch("https://fr.wikipedia.org/api/rest_v1/page/random/summary").then(async function (response) {
+            if (response.status == 200)
+                return response.json()
+            else {
+                console.log("ERROR")
+                window.location.href = "/pub";
+                return;
+            }
+        }).then((end) => {
+            console.log(end);
+            document.getElementById("end-url").setAttribute('href', end.content_urls.desktop.page);
+            document.getElementById("end-img").setAttribute('src', end.thumbnail.source);
+            document.getElementById("end-title").innerHTML = end.title;
+            document.getElementById("end-subtitle").innerHTML = end.description;
+        });
+    </script>
     <div class="has-text-centered" style="height: 4%;">
         <p>
             <strong>The French Wiki Game</strong> par <a
@@ -108,5 +136,15 @@
         </p>
         </footer>
 </body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYLBQ0JGS"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FQYLBQ0JGS');
+</script>
+<script data-ad-client="ca-pub-4031683952972566" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </html>
