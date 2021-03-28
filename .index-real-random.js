@@ -43,7 +43,7 @@ async function searchinWikipedia() {
 
 }
 
-searchinWikipedia();
+//searchinWikipedia();
 
 // BACK LINKS
 
