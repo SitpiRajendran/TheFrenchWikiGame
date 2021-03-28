@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>The French Wiki Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+
+</head>
+<style>
+    .background {
+        background-size: cover;
+        background-color: #000;
+    }
+</style>
+
+<body class="is-link">
+    <section class="hero is-link is-fullwidth is-vcentered" style="min-height: 95%;">
+        <div class="hero-body columns is-vcentered" style="margin-left: 5%;margin-right: 5%;">
+            <div class="column is-4 has-text-dark has-text-centered is-hidden-desktop">
+                <h1 class="title">The French Wiki Game</h1>
+                <br>
+                <h2 class="subtitle is-6" style="padding: 5%;">Passez d'un article à un autre en cliquant uniquement sur
+                    les liens</h2>
+                <br>
+                <button class="button is-white" id="bouton" href="/" onclick="myFunction()">Je veux une autre
+                    combinaison 👉</button>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("bouton").classList.add("is-loading");
+                            window.location.href = "/";
+                        }
+                    </script>
+            </div>
+            <div class="column">
+                <p class="subtitle is-6">Début :</p>
+                <a href="<%=start.url%>" target="_blank" rel="noopener noreferrer">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="<%=start.thumbnail%>" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content has-background-danger">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">
+                                        <%=start.title%>
+                                    </p>
+                                    <p class="subtitle is-6">
+                                        <%=start.description%>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="column is-4 has-text-dark has-text-centered is-hidden-touch">
+                <h1 class="title">The French Wiki Game</h1>
+                <img src="https://images.emojiterra.com/google/android-11/128px/1f1eb-1f1f7.png">
+                <br>
+                <h2 class="subtitle is-6" style="padding: 5%;">Passez d'un article à un autre en cliquant uniquement sur
+                    les liens</h2>
+                <br>
+                <button class="button is-white" id="bouton" href="/" onclick="myFunction()">Je veux une autre
+                    combinaison 👉</button>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("bouton").classList.add("is-loading");
+                            window.location.href = "/";
+                        }
+                    </script>
+            </div>
+            <div class="column">
+                <p class="subtitle is-6">Fin :</p>
+                <a href="<%=end.url%>" target="_blank" rel="noopener noreferrer">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="<%=end.thumbnail%>" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content has-background-danger">
+                            <div class="media is-link">
+                                <div class="media-content is-link">
+                                    <p class="title is-4">
+                                        <%=end.title%>
+                                    </p>
+                                    <p class="subtitle is-6">
+                                        <%=end.description%>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="has-text-centered" style="height: 4%;">
+        <p>
+            <strong>The French Wiki Game</strong> par <a
+                href="https://github.com/SitpiRajendran/TheFrenchWikiGame">Sitpi RAJENDRAN</a>
+        </p>
+        </footer>
+</body>
+
+</html>
