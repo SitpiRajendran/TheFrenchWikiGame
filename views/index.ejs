@@ -107,7 +107,6 @@
                 return;
             }
         }).then((start) => {
-            console.log(start);
             document.getElementById("start-url").setAttribute('href', start.content_urls.desktop.page);
             document.getElementById("start-img").setAttribute('src', start.thumbnail.source);
             document.getElementById("start-title").innerHTML = start.title;
@@ -122,7 +121,6 @@
                 return;
             }
         }).then((end) => {
-            console.log(end);
             document.getElementById("end-url").setAttribute('href', end.content_urls.desktop.page);
             document.getElementById("end-img").setAttribute('src', end.thumbnail.source);
             document.getElementById("end-title").innerHTML = end.title;
